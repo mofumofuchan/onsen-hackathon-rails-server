@@ -33,7 +33,8 @@ class MessagesController < ApplicationController
     messages_json = messages.map do |m|
       {"username": m.username,
        "message": m.message,
-       "perfume": m.perfume
+       "perfume": m.perfume,
+       "created_at": m.created_at
       }
     end
     render json: messages_json
