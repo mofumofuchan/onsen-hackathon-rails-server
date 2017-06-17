@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  room_id: 1
+  message: MyString
+  perfume: false
+
+two:
+  username: MyString
+  room_id: 1
+  message: MyString
+  perfume: false
