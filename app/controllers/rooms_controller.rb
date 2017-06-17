@@ -2,8 +2,17 @@ class RoomsController < ApplicationController
   protect_from_forgery except: [:create]
 
   def create
-    render json: {result: "post ok"}
-    return
+    room_param = params.permit(:name, :username)
+
+    if Room.find_by(name: room_param["name"]).nil?
+      room = Room.new(name: room_param["name"], username: room_param["username"])
+      room.save!
+      render json: {"result": "created", "room_name": room.name}
+      return
+    else
+      render json: {"result": "connected"}
+      return
+    end
   end
 
   def show
@@ -11,3 +20,4 @@ class RoomsController < ApplicationController
     return
   end
 end
+ap
