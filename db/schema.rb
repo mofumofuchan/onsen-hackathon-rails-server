@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20170617072629) do
 
   create_table "rooms", force: :cascade do |t|
     t.string "name", null: false
-    t.string "is_connected", default: "f", null: false
+    t.boolean "is_connected", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
