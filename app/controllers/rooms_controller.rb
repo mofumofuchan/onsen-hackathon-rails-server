@@ -12,6 +12,8 @@ class RoomsController < ApplicationController
       return
     else
       room.is_connected = true
+      room.username2 = room_param["username"]
+      room.save!
       render json: {"result": "connected", "room_name": room.name}
       return
     end
