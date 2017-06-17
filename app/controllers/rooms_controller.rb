@@ -24,7 +24,7 @@ class RoomsController < ApplicationController
 
     room = Room.find_by(name: room_param["name"])
     if room.nil?
-      render json: {"result": "not found"}, status: 404
+      render json: {"result": "room not found"}, status: 404
       return
     end
 
